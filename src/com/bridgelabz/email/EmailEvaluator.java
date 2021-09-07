@@ -7,7 +7,7 @@ import java.util.regex.Pattern;
 public class EmailEvaluator {
 	
 	public static boolean emailValidator(String email) {
-		Pattern pattern = Pattern.compile("([a-zA-Z][a-zA-Z0-9_-]*[a-z|A-Z|0-9])(([+-_.][a-zA-Z0-9]*)?)(@[a-zA-Z0-9]*)([.])([a-z]{2,})");
+		Pattern pattern = Pattern.compile("([a-zA-Z][a-zA-Z0-9_-]*[a-zA-Z0-9])(([+_.-][a-zA-Z0-9]*)?)(@[a-zA-Z0-9]+)([.])([a-z]{2,})(([.][a-z]{2,})?)");
 		Matcher matcher = pattern.matcher(email);
 		return matcher.matches();
 	}
